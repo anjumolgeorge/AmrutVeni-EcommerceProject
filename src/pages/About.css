@@ -1,0 +1,24 @@
+.about {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-wrap {
+  color: #065f46;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 14rem;
+  background-image: url("/public/assets/banner.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 68rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+.intro{
+  margin-top: 100rem;
+}
