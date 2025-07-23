@@ -1,24 +1,50 @@
 .about {
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   position: relative;
 }
 
 .about-wrap {
-  color: #065f46;
-  height: 100vh;
+  color: white;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 14rem;
-  background-image: url("/public/assets/banner.webp");
+  justify-content: center ;
+  align-items: center;
+  padding-left: 10rem;
+  background-image: url("/public/assets/kkk.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 68rem;
+  background-size: 100rem;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+  font-size: larger;
 }
 .intro{
-  margin-top: 100rem;
+  margin-top: 5rem;
+}
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 5rem;
+  padding: 2rem 10rem;
+}
+
+.image-container {
+  margin-top: 5rem;
+}
+
+.ceo {
+  width: 26rem;
+  height: 40rem;
+  border-radius: 1rem;
+  margin: 0; 
+}
+
+.description {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0; 
+  max-width: 40rem;
 }
