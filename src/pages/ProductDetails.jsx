@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProductDetails.css";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -37,6 +38,11 @@ const products = [
 ];
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
+
+  const handleViewAll = () => {
+    navigate("/products");
+  };
   return (
     <div className="product-container">
       {products.map((product) => (
@@ -50,7 +56,7 @@ const ProductDetails = () => {
       ))}
 
       <div className="button">
-        <button className="viewall">View All</button>
+        <button className="viewall" onClick={handleViewAll}>View All</button>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@
 }
 .blog-wrap {
   color: #136936;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center ;
@@ -23,4 +23,66 @@
   background-size: 100rem;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
   font-size: larger;
+}
+.healthy-hair{
+  font-size: larger;
+  margin-top: 5rem;
+}
+.blog-container {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  padding: 40px 20px;
+  text-align: center;
+ 
+}
+
+.blog-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+.blog-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.blog-card {
+  width: 300px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  text-align: left;
+}
+
+.blog-video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.blog-content {
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  width: 100%;
+}
+
+.blog-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.blog-description {
+  font-size: 14px;
+  opacity: 0.85;
 }
