@@ -5,15 +5,19 @@ import { IoIosContact } from "react-icons/io";
 import { LuShoppingBag } from "react-icons/lu";
 import { TbCloverFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
-
+import { useCart } from "./CartContext";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const { cartItems, removeFromCart } = useCart();
 
   const handleContactClick = () => {
     setIsModalOpen(!isModalOpen);
   };
-
+  const handleCartClick = () => {
+    setShowCart(!showCart);
+  };
   return (
     <div className="container">
       <div className="navbar">
@@ -26,23 +30,23 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="innerbox">
-              <ul>
-  <li>
-    <Link to="/">Home</Link>
-  </li>
-  <li>
-    <Link to="/about">About Us</Link>
-  </li>
-  <li>
-    <Link to="/products">Products</Link>
-  </li>
-  <li>
-    <Link to="/blog">Blog</Link>
-  </li>
-  <li>
-    <Link to="/contact">Contact Us</Link>
-  </li>
-</ul>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/products">Products</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+          </ul>
         </div>
 
         {/* Search */}
@@ -61,7 +65,11 @@ const Navbar = () => {
             style={{ cursor: "pointer" }}
           />
           <TbCloverFilled className="sizes" />
-          <LuShoppingBag className="sizes" />
+          <LuShoppingBag
+            className="sizes"
+            onClick={handleCartClick}
+            style={{ cursor: "pointer" }}
+          />
         </div>
       </div>
 
@@ -112,6 +120,37 @@ const Navbar = () => {
               Close
             </button>
           </div>
+        </div>
+      )}
+      {showCart && (
+        <div className="cart-modal">
+          <h3>Your Cart</h3>
+          {cartItems.length === 0 ? (
+            <p>Cart is empty.</p>
+          ) : (
+            cartItems.map((item, index) => (
+              <div key={index} className="cart-item">
+                <img
+                  src={item.image}
+                  alt={item.Productname}
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <div>
+                  <p>{item.Productname}</p>
+                  <p>{item.price}</p>
+                </div>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className="remove-btn"
+                >
+                  Remove
+                </button>
+              </div>
+            ))
+          )}
+          <button onClick={handleCartClick} className="close-cart-btn">
+            Close
+          </button>
         </div>
       )}
     </div>
